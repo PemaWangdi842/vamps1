@@ -1,0 +1,2419 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-Screen Background */
+.full-screen-bg {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(col.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 60px;
+}
+
+ul li {
+    position: relative;
+}
+.menu-item a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color:white ;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.menu-item a :hover::after{
+    width: 100%;
+
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: color 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    color: #ff7200;
+}
+
+nav ul li a.active {
+    background-color: #9c92e0;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    padding: 10px 0;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 8px 15px;
+    color: #333;
+    font-weight: normal;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    background-color: #f4f4f4;
+    color: #3498db;
+}
+
+/* Show dropdown on hover */
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.srch {
+    font-family: 'Times New Roman';
+    width: 180px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #ff7200;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.srch-btn {
+    height: 40px;
+    padding: 0 15px;
+    background-color: #ff7200;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.srch-btn:hover {
+    background-color: #3498db;
+}
+
+/* Main Section */
+.college-embrak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.college-embrak p {
+    font-size: 1.2em;
+    color: white;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.college-embrak ul {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.college-embrak ul li a {
+    background-color: #ff7200;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.college-embrak ul li a:hover {
+    background-color: #3498db;
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    align-self: flex-start;
+    background-color: #ff7200;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #3498db;
+}
+
+/* Footer */
+/* General footer styling */
+footer {
+    background-color: #3b76a1;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Flex container for layout */
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo and contact info section */
+.footer-logo-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo-contact img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-contact-info h3 {
+    margin: 5px 0;
+}
+
+.footer-contact-info p,
+.footer-contact-info a {
+    margin: 2px 0;
+    color: white;
+    text-decoration: none;
+}
+
+/* Section titles */
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* List styling */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social media links */
+footer .social-media-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer .social-media-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-media-links a:hover {
+    color: #cce4f6;
+}
+
+/* Copyright text */
+footer p {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+}
+
+/* hamburger */
+.hamburger {
+    display: none;
+}
+.menu-toggle:checked{
+    display: none;
+}
+/* Responsive Styling */
+@media (max-width: 700px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .search {
+        display: none;
+    }
+
+    /* Show nav links when .menu-toggle checkbox is checked */
+    .menu-toggle:checked + .hamburger + nav ul {
+        display: flex;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .college-embrak ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+
+
+/* mission */
+
+.mission-vision {
+    text-align: center;
+    padding: 30px;
+    background-color: #f4f4f4;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h1 {
+    background-color: #f97e0b;
+    color: #0e0c0a;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+    font-size: 2em;
+}
+
+.card p {
+    font-size: 1.1em; /* Slightly larger font for readability */
+    line-height: 1.6; /* Spacing for better readability */
+    color: #333333; /* Dark gray text */
+    font-family: 'Arial', sans-serif; /* Set a clean, modern font */
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+/* core */
+.core-values-section {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.core-values-content h1 {
+    font-size: 2.5em;
+    color: #f97e0b; /* Accent color for the title */
+    margin-bottom: 20px;
+}
+
+.core-values-content ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center align list */
+    flex-wrap: wrap;
+    gap: 20px; /* Space between each item */
+}
+
+.core-values-content li {
+    background-color: #ffffff; /* White background for each item */
+    padding: 15px 25px;
+    border: 2px solid #f97e0b; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1.2em;
+    color: #333; /* Dark text color */
+    transition: transform 0.3s, background-color 0.3s; /* Smooth transition */
+}
+
+.core-values-content li:hover {
+    background-color: #f97e0b; /* Change background on hover */
+    color: #ffffff; /* White text on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* timeline */
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #f97e0b;
+}
+
+.timeline-item:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 22px;
+    height: 100%;
+    width: 2px;
+    background: #e9ecef;
+}
+
+.timeline-content {
+    margin-left: 40px;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.timeline-content h2 {
+    margin: 0 0 10px;
+}
+
+.timeline-content p {
+    margin: 0;
+}
+
+/* Alumni */
+
+.content {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta button {
+    background-color: #f97e0b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cta button:hover {
+    background-color: #3498db;
+}
+
+.sub-header {
+    font-size: 24px;
+    margin-top: 40px;
+    color: #333;
+    text-align: left;
+    border-bottom: 2px solid #f97e0b;
+    padding-bottom: 5px;
+}
+/* Timeline  */
+/* Timeline container */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #e0e0e0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline items */
+.timeline-item {
+    padding: 10px 20px;
+    position: relative;
+    width: 50%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* Dot */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #4e8ee9;
+    border: 4px solid #e0e0e0;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Left and Right items */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 30px; /* Add padding to create space for the dot */
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: -13px; /* Dot positioning for left items */
+}
+
+.timeline-item:nth-child(odd) h2 {
+    margin-left: 40px; /* Adds space between the dot and the date */
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 30px; /* Add padding to create space for the dot */
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -13px; /* Dot positioning for right items */
+}
+
+/* Date and content styling */
+.timeline-item h2 {
+    color: #4e8ee9;
+    margin: 0 0 10px;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Alumni */
+.alumni-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.alumni-intro {
+    flex: 1; /* Takes up remaining space on the left */
+    padding: 20px;
+    font-size: 1.2em;
+    color: #555;
+    margin-right: 20px; /* Add space between intro and cards */
+}
+
+.alumni-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 60%; /* Adjust this to control the width of the cards */
+}
+
+.alumni-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+.alumni-card:hover {
+    transform: translateY(-5px); /* Adds a lift effect on hover */
+}
+.alumni-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.alumni-card-content h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.alumni-card-content p {
+    color: #666;
+    margin: 10px 0;
+}
+
+.alumni-card-content .read-more {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Admission Section */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admission-section {
+    width: 80%;
+    max-width: 1200px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.admission-section h1 {
+    font-size: 2.5em;
+    color: #f97e0b;
+    margin-bottom: 1em;
+}
+
+.admission-info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.info-card {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h2 {
+    color: #f97e0b;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.info-card p {
+    color: #7f8c8d;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+.info-card ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+    color: #7f8c8d;
+}
+
+.info-card a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Calendar */
+.calendar-section {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin: 2em auto;
+}
+.calendar-section h1{
+    color:  #f97e0b;    
+}
+
+.calendar-container {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+    font-size: 1.5em;
+    color:  #f97e0b;
+}
+
+.calendar-header button {
+    background:  #f97e0b;
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.calendar-header button:hover {
+    background: #3498db;
+}
+
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-name {
+    font-weight: bold;
+    color:#f97e0b;
+    padding: 10px;
+    text-align: center;
+    background-color: #eaeaea;
+    border-radius: 5px;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day, .empty-day {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background 0.3s;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.calendar-day:hover {
+    background-color:  #3498db;
+    cursor: pointer;
+}
+
+.today {
+    background-color: #f97e0b;;
+    color: white;
+    font-weight: bold;
+}
+/* Library Hero Section */
+.library-hero {
+    background: #ff7200;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.library-hero h1 {
+    font-size: 2.5em;
+}
+
+.library-hero p {
+    font-size: 1.2em;
+}
+
+
+/* Library Content Styles */
+.library-content {
+    padding: 20px;
+}
+
+.library-section {
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.library-section h2 {
+    border-bottom: #ff7200;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+
+.resource-cards, .service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.resource-cards h3 {
+    background-color:  #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.service-card h3 {
+    background-color:  #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.resource-card, .service-card {
+    background: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 0 1 30%; /* Responsive card size */
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.resource-card:hover, .service-card:hover {
+    transform: scale(1.05);
+}
+
+.resource-card h3, .service-card h3 {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    background: #ff7200;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: #3498db;
+}
+
+/* ebook */
+.heros {
+    padding: 50px;
+    background-color: #eb9752;
+    text-align: center;
+}
+
+.resource-sections {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.resource-cards {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-cards h2 {
+    color:  #ff7200;
+    padding: 10px;
+}
+
+.resource-cards p{
+    font-size: 1.2em;
+}
+
+.resource-cards ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* team */
+.management-team {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.management-team h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0c0c0c;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-card {
+    text-align: center;
+    width: 200px;
+}
+
+.team-card h3 {
+    margin: 15px 0 5px;
+    font-size: 1.2em;
+    color: black;
+}
+
+.team-card p {
+    font-size: 1em;
+    color: black;
+}
+
+.hexagon {
+    width: 200px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hexagon:hover {
+    transform: translateY(-5px);
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 35px solid #fff;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 35px solid #fff;
+}
+
+.hexagon img {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+}
+/* Quick Links */
+.quick-links {
+    background-color: #f4f4f4; /* Light background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 300px; /* Set width if it’s a sidebar */
+    margin: 20px auto; /* Centered if standalone */
+    text-align: center;
+}
+
+.quick-links h2 {
+    font-size: 1.8em;
+    color: #f97e0b; /* Accent color */
+    margin-bottom: 15px;
+}
+
+.quick-links ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.quick-links li {
+    margin: 10px 0; /* Space between links */
+}
+
+.quick-links a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Dark text color */
+    font-size: 1.1em;
+    transition: color 0.3s; /* Smooth color change */
+}
+
+.quick-links a:hover {
+    color:#3498db; /* Change color on hover */
+}
+
+.e-services {
+    background-color: #e9f4ff; /* Light blue background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 300px; /* Set width if it’s a sidebar */
+    margin: 20px auto; /* Centered if standalone */
+    text-align: center;
+}
+
+.e-services h2 {
+    font-size: 1.8em;
+    color: #3498db; /* Blue accent color */
+    margin-bottom: 15px;
+}
+
+.e-services ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.e-services li {
+    margin: 20px 0; /* Space between links */
+}
+
+.e-services a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+    font-size: 1.0em;
+    transition: color 0.3s; /* Smooth color change */
+}
+
+.e-services a:hover {
+    color: #3498db; /* Blue color on hover */
+}
+
+/* Accomodation */
+/* Accommodation Section Styles */
+.accommodation {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.accommodation h2 {
+    color:  #f97e0b;
+    font-size: 28px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.accommodation h3 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.accommodation h4, .accommodation h5 {
+    color: #f97e0b;
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.accommodation p {
+    color: black;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.accommodation ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.accommodation ul li {
+    font-size: 16px;
+    color: black;
+    margin: 8px 0;
+}
+/* Styling for residence hall images */
+.residence-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for zoom-in */
+.residence-image:hover {
+    transform: scale(1.08); /* Slight zoom-in effect */
+}
+
+
+/* Additional styles for spacing and responsive layout */
+@media (max-width: 700px) {
+    .accommodation {
+        padding: 15px;
+    }
+    
+    .accommodation h2 {
+        font-size: 24px;
+    }
+
+    .accommodation h3 {
+        font-size: 20px;
+    }
+
+    .accommodation h4, .accommodation h5 {
+        font-size: 18px;
+    }
+
+    .accommodation p, .accommodation ul li {
+        font-size: 15px;
+    }
+    .residence-image {
+        max-width: 100%;
+    }
+}
+
+/* Main happiness styles */
+.tab-content {
+    margin-bottom: 20px;
+}
+
+.tab-content h2 {
+    color: #f97e0b;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tab-content p {
+    font-size: 1em;
+    color: black;
+    margin-bottom: 15px;
+}
+
+#upcoming ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#upcoming ul li {
+    margin-bottom: 10px;
+}
+
+#upcoming ul li strong {
+    color: black;
+}
+
+/* Collapsible content for Announcements */
+.collapsible {
+    background-color:#f97e0b;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    font-size: 1em;
+    border-radius: 5px;
+    transition:transform 0.3s ease;
+}
+
+.collapsible:hover {
+    transform: translateY(-5px);
+    background: #3498db;
+} ;
+
+
+.collapsible:after {
+    content: '\002B';
+    font-size: 1.2em;
+    float: right;
+}
+
+.collapsible.active:after {
+    content: "\2212";
+}
+
+/* Main july and august */
+.section-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition:transform 0.3s ease;
+}
+.section-container{
+    transform: translateY(-5px);
+    background: #d9eefc;
+}
+.section-container h2 {
+    color: #f97e0b;
+    margin-bottom: 10px;
+}
+
+.section-container p, 
+.section-container ul, 
+.section-container ol {
+    color:black;
+    line-height: 1.6;
+}
+
+/* List styles */
+.section-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.section-container ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Link styles inside sections */
+.section-container a {
+    color:  #f97e0b;
+    text-decoration: underline;
+}
+
+.section-container a:hover {
+    color: #3498db;
+}
+
+/* Additional styling for notes or important text */
+.section-container strong {
+    color: #f97e0b; /* Highlights important notes in red */
+}
+
+a {
+    color: #f97e0b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Club */
+#clubs {
+    padding: 20px;
+}
+
+.club-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Adds space between items */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.club-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 250px; /* Ensures each item has a consistent width */
+    text-align: center;
+    color:#ff7200; 
+}
+
+.club-logo {
+    width: 100px; /* Adjust logo size to fit within the design */
+    object-fit: contain; /* Ensures logo fits nicely within the area */
+    margin-bottom: 15px; /* Adds space between the logo and text */
+}
+
+.club-item span {
+    font-size: 14px; /* Adjust font size for readability */
+}
+
+/* Games & Sports Section */
+.games-sports {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.games-sports h2 {
+    color: #ff7200;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.games-sports p {
+    color:black;
+    margin-bottom: 15px;
+}
+
+/* Sports Facilities Section */
+.sports-facilities h3 {
+    font-size: 1.5em;
+    color: #ff7200;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.sports-facilities h4 {
+    color:#ff7200;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Image styling with hover effect */
+.facility-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for zoom-in */
+.facility-image:hover {
+    transform: scale(1.08); /* Slight zoom-in effect */
+}
+
+
+
+/* General Examination Records Section Styles */
+.examination-records {
+    background-color: #f4f4f9; /* Light background for readability */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.examination-records h2 {
+    font-size: 2em;
+    color: #ff7200; /* Sherubtse College branding color (if applicable) */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.examination-records h3 {
+    font-size: 1.5em;
+    color: #ff7200; /* Darker shade for subheadings */
+    margin-top: 30px;
+    border-bottom: 2px solid #3498db; /* Add a border for emphasis */
+    padding-bottom: 5px;
+}
+
+.examination-records ul {
+    list-style: disc inside;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.examination-records ul li {
+    font-size: 1em;
+    color: black;
+    margin: 8px 0;
+}
+
+/* Links Styling */
+.examination-records a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.examination-records a:hover {
+    text-decoration: underline;
+    color: #1976d2; /* Slightly darker color on hover */
+}
+
+/* Add responsive styling for smaller devices */
+@media (max-width: 700px) {
+    .examination-records {
+        padding: 15px;
+    }
+
+    .examination-records h2 {
+        font-size: 1.8em;
+    }
+
+    .examination-records h3 {
+        font-size: 1.3em;
+    }
+
+    .examination-records ul li {
+        font-size: 0.95em;
+    }
+}
+
+/* General Styles */
+
+/* Research Centers Section */
+#researchs-centers {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+#researchs-centers h2 {
+    text-align: center;
+    color: #ff7200;
+    margin-bottom: 20px;
+}
+
+.center-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.center-item {
+    width: 30%;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.center-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.center-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.center-item span {
+    display: block;
+    font-size: 18px;
+    color: black;
+}
+
+/* Research Facilities & Equipment Section */
+#facilities {
+    padding: 40px 20px;
+    background-color: #fff;
+    color: black;
+}
+
+#facilities h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#facilities ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#facilities li {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#facilities h3 {
+    font-size: 22px;
+    color: black;
+}
+
+#facilities p {
+    font-size: 16px;
+    color: black;
+}
+
+
+/* Research Works and Projects Section */
+#works-projects {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+#works-projects h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#works-projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#works-projects li {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+#works-projects h3 {
+    font-size: 20px;
+    color: black;
+}
+
+#works-projects p {
+    font-size: 16px;
+    color: black;
+    gap: 10px;
+}
+
+/* Image Styling (for facilities images) */
+#facilities img {
+    max-width: 600px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for zoom-in */
+#facilities img:hover {
+    transform: scale(1.04); /* Slight zoom-in effect */
+}
+/* Responsive Design */
+@media (max-width: 700px) {
+    .center-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center-item {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    #facilities ul, #works-projects ul {
+        padding-left: 20px;
+    }
+}
+
+/* ACRG Section Styles */
+#acrg {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Annual */
+#acrg h2 {
+    font-size: 2em;
+    color:#ff7200;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#acrg p {
+    font-size: 1.1em;
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#acrg h3 {
+    font-size: 1.5em;
+    color:#ff7200;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#acrg ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#acrg ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#acrg ul li a {
+    color: #3498db;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#acrg ul li a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Business */
+/* General Section Styling */
+#incubation-centre {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#incubation-centre h2 {
+    color: #ff7200;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#incubation-centre p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+
+/* Vision & Mission Section */
+.vision-mission {
+    margin-top: 20px;
+}
+
+.vision-mission h3 {
+    color: #ff7200;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.vision-mission ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.vision-mission li {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Background Information Section */
+.background-info {
+    margin-top: 30px;
+}
+
+.background-info h3 {
+    color: #ff7200;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.background-info p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Programs and Activities Section */
+.programs-activities {
+    margin-top: 30px;
+}
+
+.programs-activities h3 {
+    color: #ff7200;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.programs-activities ul {
+    padding-left: 20px;
+    list-style-type: square;
+    margin-top: 10px;
+}
+
+.programs-activities li {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contact Information Section */
+.contact-info {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #eef7ff;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
+
+.contact-info h3 {
+    color: #ff7200;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+}
+
+.contact-info strong {
+    color: #3498db;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* News */
+/* General styling for news section */
+#news-section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f7fb;
+}
+
+#news-section h2 {
+    color: #3498db;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* News Cards Container */
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Individual News Card Styling */
+.news-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-card h3 {
+    color: #ff7200;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.news-card p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Styling for images */
+.news-card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Hover effect for News Card */
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Vancancy */
+/* General Styling for the Announcement Section */
+#announcement-section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f7fb;
+}
+
+#announcement-section h2 {
+    color:#ff7200;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Container for the Announcement Cards */
+.announcement-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Styling for Each Announcement Card */
+.announcement-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Title of Each Announcement */
+.announcement-card h3 {
+    color:#ff7200;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Date Styling */
+.announcement-card .date {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Description Styling */
+.announcement-card .announcement-description {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Hover Effect for the Announcement Card */
+.announcement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+/* Tender */
+/* General Styling for Tender Section */
+#tender-section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f7fb;
+}
+
+#tender-section h2 {
+    color:#ff7200;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Tender Card Styling */
+.tender-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Title of the Tender */
+.tender-card h3 {
+    color: #ff7200;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Date Styling */
+.tender-card .date {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Description Styling */
+.tender-card .tender-description {
+    color:black;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Hover Effect for the Tender Card */
+.tender-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Section */
+#contact-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-card {
+    width: 200px;
+    height: 150px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 2s;
+}
+
+.contact-card:hover .card-inner {
+    transform: rotateX(180deg); /* Changed from rotateY to rotateX for vertical flip */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card-front {
+    background-color: #ff7200;
+    color: white;
+    font-size: 1.1em;
+}
+
+.card-back {
+    background-color: #3498db;
+    color: black;
+    transform: rotateX(180deg); /* Changed from rotateY to rotateX for vertical flip */
+    font-size: 0.6em;
+    text-align: left;
+}
+
+/* Styling for contact details on card-back */
+.card-back .email {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-back .name {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.card-back .phone {
+    color: black;
+}
+
+/* Stack */
+/* CSS for Program Overview and Program Details with Hover Effects and Enhanced Shadow */
+#bachelors-economics-political-science {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 1px 8px 24px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#bachelors-economics-political-science:hover {
+    box-shadow: 1px 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+#bachelors-economics-political-science h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff7200; /* College theme color */
+    margin-bottom: 1rem;
+}
+
+.program-overview,
+.program-details {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.program-overview:hover,
+.program-details:hover {
+    box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.program-overview p,
+.program-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.program-details h3 {
+    font-size: 1.5rem;
+    color: #ff7200;
+    margin-bottom: 0.5rem;
+}
+
+.program-details ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    margin-top: 0.5rem;
+    color: black;
+}
+
+.program-details ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 700px) {
+    #bachelors-economics-political-science {
+        padding: 1rem;
+    }
+}
+
+/* data science */
+/* CSS for Bachelor of Data Science & Data Analytics Section */
+#bachelors-data-science-analytics {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 1px 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+#bachelors-data-science-analytics h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff7200; /* College theme color */
+    margin-bottom: 1rem;
+}
+
+.program-overview, .program-details {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.program-overview p, .program-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.program-details h3 {
+    font-size: 1.5rem;
+    color: #ff7200;
+    margin-bottom: 1rem;
+}
+
+/* CSS for Program Modules Table */
+.program-modules {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.program-modules th, .program-modules td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.program-modules th {
+    background-color: #ff7200;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.program-modules tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.program-modules tr:hover {
+    background-color: #e0e0e0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.program-modules td {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    #bachelors-data-science-analytics {
+        padding: 1rem;
+    }
+
+    .program-modules th, .program-modules td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+/* life science */
+/* CSS for BSc Life Science */
+#bsc-life-science {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 1px 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+#bsc-life-science h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff7200; /* Consistent with theme color */
+    margin-bottom: 1rem;
+}
+
+.program-overview {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.program-overview p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.program-modules {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.program-modules th, .program-modules td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.program-modules th {
+    background-color: #ff7200; /* Consistent theme color */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.program-modules tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.program-modules tr:hover {
+    background-color: #e0e0e0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.program-modules td {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    #bsc-life-science {
+        padding: 1rem;
+    }
+
+    .program-modules th, .program-modules td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* location */
+/* Location Section */
+.location {
+    padding: 20px;
+    background-color: #f9f9fb;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: black;
+}
+
+/* Location Info */
+.location-info {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: black;
+    line-height: 1.6;
+}
+
+.location-info p {
+    margin: 8px 0;
+}
+
+/* Map Link */
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    color: #ffffff;
+    background-color: #ff7200;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+.map-link:hover {
+    background-color: #3498db;
+}
+
+/* Map */
+.map {
+    margin-top: 15px;
+}
+
+.map iframe {
+    border: 0;
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .location h3 {
+        font-size: 1.3em;
+    }
+
+    .location-info {
+        font-size: 0.9em;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location h3 {
+        font-size: 1.2em;
+    }
+
+    .location-info {
+        font-size: 0.85em;
+    }
+
+    .map iframe {
+        height: 200px;
+    }
+
+    .map-link {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+}
